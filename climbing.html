@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climbing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('mouse1.png'), auto;
+        }
+
+        a, button, .photo-wrapper, input, textarea, [onclick], img[onclick], area, select, label[for], img {
+    cursor: url('mouse2.png'), pointer !important;
+}
+
+        body {
+            background-image: url('ground3.gif');
+            background-size: 100px 100px;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: repeat;
+            font-family: 'Courier New', 'Consolas', monospace;
+            padding: 20px; 
+            min-height: 100vh;
+        }
+
+        .header-banner {
+            background: linear-gradient(180deg, #b19cd9 0%, #9370db 100%);
+            border-bottom: 3px solid #000;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header-banner img {
+            width: 100%;
+            display: block;
+        }
+
+        .nav-banner {
+            background: linear-gradient(180deg, #dda0dd 0%, #ba55d3 100%);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .nav-banner a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 5px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .nav-banner a:hover {
+            background: rgba(255,255,255,0.3);
+            border-radius: 5px;
+        }
+
+        .black-section {
+            background-color: black;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 800px;
+        }
+
+        .climbing-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+        }
+
+        .climb-item {
+            width: 100%;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .photo-wrapper {
+            transition: transform 0.3s, filter 0.3s;
+            position: absolute;
+            width: 300px;
+        }
+
+        .climb-item.left .photo-wrapper {
+            left: 180px;
+        }
+
+        .climb-item.right .photo-wrapper {
+            right: 180px;
+        }
+
+        .photo-wrapper img {
+            width: 300px;
+            height: auto;
+            display: block;
+        }
+
+        .photo-wrapper:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .climb-text {
+            color: white;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 280px;
+            position: absolute;
+            top: 35%;
+            transform: translateY(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .climb-item.left .climb-text {
+            left: 510px;
+        }
+
+        .climb-item.right .climb-text {
+            right: 510px;
+            text-align: right;
+        }
+
+        .climb-text.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .black-section {
+                padding: 40px 20px;
+            }
+
+            .climb-item {
+                min-height: 350px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .photo-wrapper {
+                position: static !important;
+                left: auto !important;
+                right: auto !important;
+            }
+
+            .photo-wrapper img {
+                width: 250px;
+            }
+
+            .climb-text {
+                position: static !important;
+                left: auto !important;
+                right: auto !important;
+                transform: none !important;
+                text-align: center !important;
+                margin-top: 15px;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <img src="holy1.png" alt="Website Banner">
+    </div>
+
+    <div class="nav-banner">
+    <a href="index.html">Home</a>
+    <a href="norwegian.html">Norwegian</a>
+    <a href="arthistory.html">Art History</a>
+    <a href="Climbing.html">Climbing</a>
+    <a href="writing.html">Writing</a>
+    <a href="cooking.html">Cooking</a>
+    </div>
+
+    <div class="black-section">
+        <div class="climbing-container">
+            <div class="climb-item left">
+                <div class="photo-wrapper" onclick="toggleText(1)">
+                    <img src="clib.png" alt="V1 Climbs">
+                </div>
+                <div class="climb-text" id="text-1">
+                    <p>I can climb all of the V1's in my gym!</p>
+                </div>
+            </div>
+
+            <div class="climb-item right">
+                <div class="photo-wrapper" onclick="toggleText(2)">
+                    <img src="clib.png" alt="V2 Climbs">
+                </div>
+                <div class="climb-text" id="text-2">
+                    <p>I can climb most of the V2's in my gym. There are three I am currently working on.</p>
+                </div>
+            </div>
+
+            <div class="climb-item left">
+                <div class="photo-wrapper" onclick="toggleText(3)">
+                    <img src="clib.png" alt="V3 Climbs">
+                </div>
+                <div class="climb-text" id="text-3">
+                    <p>I have climbed two V3's!</p>
+                </div>
+            </div>
+
+            <div class="climb-item right">
+                <div class="photo-wrapper" onclick="toggleText(4)">
+                    <img src="clib.png" alt="V4 Climbs">
+                </div>
+                <div class="climb-text" id="text-4">
+                    <p>I got close to completing a V4 once lol.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleText(id) {
+            const textElement = document.getElementById('text-' + id);
+            textElement.classList.toggle('visible');
+        }
+    </script>
+</body>
+</html>

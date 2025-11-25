@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Holly Land</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('mouse1.png'), auto;
+        }
+
+        a, button, .photo-wrapper, input, textarea {
+    cursor: url('mouse2.png'), pointer;
+}
+
+        body {
+            background-image: url('ground3.gif');
+            background-size: 100px 100px;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: repeat;
+            font-family: 'Courier New', 'Consolas', monospace;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* Top Purple Banner */
+.header-banner {
+    background: linear-gradient(180deg, #b19cd9 0%, #9370db 100%);
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #000;
+    overflow: hidden;
+}
+
+.header-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header-banner h1 {
+    color: white;
+    font-size: 48px;
+    text-shadow: 3px 3px 0px #000;
+    letter-spacing: 2px;
+    padding: 30px;
+}
+
+        /* Navigation Banner */
+        .nav-banner {
+            background: linear-gradient(180deg, #dda0dd 0%, #ba55d3 100%);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+        }
+
+        .nav-banner a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 5px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .nav-banner a:hover {
+            background: rgba(255,255,255,0.3);
+            border-radius: 5px;
+        }
+
+        /* News Ticker */
+        .news-ticker {
+            background: #000;
+            border-bottom: 3px solid #000;
+            padding: 8px 0;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .news-ticker-content {
+            color: #ff69b4;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 25s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Three Column Layout */
+        .content-wrapper {
+            display: flex;
+            min-height: 500px;
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #b19cd9 0%, #9370db 100%);
+            width: 200px;
+            padding: 20px;
+            border-right: 3px solid #000;
+        }
+
+        .sidebar h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            flex: 1;
+            background: #000;
+            color: #fff;
+            padding: 30px;
+        }
+
+        .main-content h2 {
+            color: #ff69b4;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px #9370db;
+        }
+
+        .main-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-right {
+            background: linear-gradient(180deg, #b19cd9 0%, #9370db 100%);
+            width: 200px;
+            padding: 20px;
+            border-left: 3px solid #000;
+        }
+
+        .sidebar-right h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .status-box {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .status-box p {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Top Purple Banner -->
+    <div class="header-banner">
+        <img src="holy1.png" alt="Website Banner">
+    </div> 
+
+        <!-- Navigation Banner -->
+<div class="nav-banner">
+    <a href="index.html">Home</a>
+    <a href="norwegian.html">Norwegian</a>
+    <a href="arthistory.html">Art History</a>
+    <a href="Climbing.html">Climbing</a>
+    <a href="writing.html">Writing</a>
+    <a href="cooking.html">Cooking</a>
+</div>
+
+        <!-- News Ticker -->
+        <div class="news-ticker">
+            <div class="news-ticker-content" id="batFact">
+                Bat fact of the day: bats are the only mammals capable of sustained flight, not just gliding.
+            </div>
+        </div>
+
+        <!-- Three Column Layout -->
+        <div class="content-wrapper">
+            <!-- Left Sidebar -->
+            <div class="sidebar">
+                 <div style="text-align: center; margin-top: 10px;">
+        <img src="kuromi1.gif" alt="gif" style="max-width: 80%;">
+        <img src="cat.gif" alt="gif" style="max-width: 80%;">
+        <img src="fem.png" alt="png" style="max-width: 80%;">
+        <img src="old.png" alt="png" style="max-width: 80%; margin-top: 20px;"> 
+
+    </div>
+            </div>
+
+            <!-- Main Content (Black) -->
+            <div class="main-content">
+                <h2>★ Welcome! ★</h2>
+                <p>Hiii!! Welcome to THE HOLLY LAND :3</p>
+                <p>My name is Holly, I'm 21, and I live in the UK. This site is a digital record of my hobbies and interests ♡</p>
+                <p>Feel free to take a look around - and don't forget to sign the visitor book!</p>
+                <h2>★ Visitor Book ★</h2>
+                <div style="background: #1a1a1a; padding: 20px; border: 2px solid #9370db; border-radius: 10px; margin-top: 20px;">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" id="visitorName" placeholder="Enter your name..." style="padding: 10px; width: 70%; font-family: 'Courier New', monospace; background: #000; color: #fff; border: 2px solid #9370db; border-radius: 5px;">
+                        <button onclick="addVisitor()" style="padding: 10px 20px; margin-left: 10px; background: #9370db; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Courier New', monospace; font-weight: bold;">Sign!</button>
+                    </div>
+                    <div id="visitorList" style="max-height: 300px; overflow-y: auto; padding: 10px; background: #000; border: 2px solid #9370db; border-radius: 5px;">
+                        <p style="color: #9370db; text-align: center;">Loading visitors...</p>
+                    </div>
+                </div>
+
+                <script type="module">
+                    // Import Firebase SDKs
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+                    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+                    // Your web app's Firebase configuration
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyDJQl3L1uoovFTXMgKG43X3lE3DBT9uJow",
+                        authDomain: "the-holly-land.firebaseapp.com",
+                        projectId: "the-holly-land",
+                        storageBucket: "the-holly-land.firebasestorage.app",
+                        messagingSenderId: "243204894532",
+                        appId: "1:243204894532:web:ddd421d23ee4b690b9b111"
+                    };
+
+                    // Initialize Firebase
+                    const app = initializeApp(firebaseConfig);
+                    const db = getFirestore(app);
+                    const visitorsRef = collection(db, 'visitors');
+
+                    // Add visitor function
+                    window.addVisitor = async function() {
+                        const nameInput = document.getElementById('visitorName');
+                        const name = nameInput.value.trim();
+                        
+                        if (name === '') {
+                            alert('Please enter your name!');
+                            return;
+                        }
+                        
+                        try {
+                            await addDoc(visitorsRef, {
+                                name: name,
+                                timestamp: serverTimestamp()
+                            });
+                            nameInput.value = '';
+                        } catch (error) {
+                            console.error('Error adding visitor:', error);
+                            alert('Error signing the book. Please try again!');
+                        }
+                    }
+
+                    // Display visitors function
+                    function displayVisitors(visitors) {
+                        const listDiv = document.getElementById('visitorList');
+                        
+                        if (visitors.length === 0) {
+                            listDiv.innerHTML = '<p style="color: #9370db; text-align: center;">Be the first to sign! ♡</p>';
+                            return;
+                        }
+                        
+                        let html = '';
+                        visitors.forEach(visitor => {
+                            const timeString = visitor.timestamp ? 
+                                new Date(visitor.timestamp.seconds * 1000).toLocaleString() : 
+                                'Just now';
+                                
+                            html += `<div style="padding: 10px; margin-bottom: 10px; background: #1a1a1a; border-left: 3px solid #ff69b4; border-radius: 5px;">
+                                        <span style="color: #ff69b4; font-weight: bold;">${visitor.name}</span>
+                                        <span style="color: #9370db; font-size: 12px; float: right;">${timeString}</span>
+                                     </div>`;
+                        });
+                        listDiv.innerHTML = html;
+                    }
+
+                    // Real-time listener - automatically updates when anyone adds a name
+                    const q = query(visitorsRef, orderBy('timestamp', 'desc'));
+                    onSnapshot(q, (snapshot) => {
+                        const visitors = [];
+                        snapshot.forEach((doc) => {
+                            visitors.push({ id: doc.id, ...doc.data() });
+                        });
+                        displayVisitors(visitors);
+                    }, (error) => {
+                        console.error('Error loading visitors:', error);
+                        document.getElementById('visitorList').innerHTML = 
+                            '<p style="color: #ff6b6b; text-align: center;">Error loading visitors. Please refresh!</p>';
+                    });
+
+                    // Allow pressing Enter to submit
+                    document.getElementById('visitorName').addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter') {
+                            addVisitor();
+                        }
+                    });
+                </script>
+
+                <script>
+                    // Bat Facts Ticker
+                    const batFacts = [
+                        "Bat fact of the day: bats are the only mammals capable of sustained flight, not just gliding.",
+                        "Bat fact of the day: some bat species can eat over 1,000 insects in a single hour, making them incredible pest controllers.",
+                        "Bat fact of the day: the world's smallest mammal is a bat - the bumblebee bat, weighing less than a penny.",
+                        "Bat fact of the day: some bats have ultraviolet vision, allowing them to see patterns on flowers that humans can't.",
+                        "Bat fact of the day: nearly one in five mammals on Earth is a bat, a statistic that catches most people off guard.",
+                        "Bat fact of the day: the Honduran white bat builds tents out of leaves, cutting and folding them to create shelters.",
+                        "Bat fact of the day: bats can recognise individual humans by voice, even after long periods without exposure."
+                    ];
+
+                    function updateBatFact() {
+                        const today = new Date();
+                        const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+                        const factIndex = dayOfYear % batFacts.length;
+                        document.getElementById('batFact').textContent = batFacts[factIndex];
+                    }
+
+                    // Update bat fact on page load
+                    updateBatFact();
+                </script>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="sidebar-right">
+                
+                <h3>✦ Updates</h3>
+                <div class="status-box">
+                    <p><strong>11/08/25</strong> - Created the site!</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="mcr.gif" alt="gif" style="max-width: 90%; margin-bottom: 20px;">
+                    <img src="kirby1.gif" alt="gif" style="max-width: 50%;">
+                    <img src="ds1.gif" alt="gif" style="max-width: 90%; margin-top: 20px;">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

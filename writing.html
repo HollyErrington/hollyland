@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        cursor: url('mouse1.png'), auto;
+    }
+
+    a, button, .chapter-box, .photo-wrapper, input, textarea {
+        cursor: url('mouse2.png'), pointer;
+    }
+
+    body {
+        background-image: url('ground3.gif');
+        background-size: 100px 100px;
+        background-attachment: fixed;
+        font-family: 'Courier New', monospace;
+        color: white;
+        padding-top: 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .header-banner {
+        background: linear-gradient(180deg, #b19cd9 0%, #9370db 100%);
+        border-bottom: 3px solid #000;
+    }
+
+    .header-banner img {
+        width: 100%;
+        display: block;
+    }
+
+    .nav-banner {
+        background: linear-gradient(180deg, #dda0dd 0%, #ba55d3 100%);
+        padding: 15px;
+        text-align: center;
+        border-bottom: 3px solid #000;
+    }
+
+    .nav-banner a {
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 0 5px;
+        display: inline-block;
+        transition: background 0.3s;
+    }
+
+    .nav-banner a:hover {
+        background: rgba(255,255,255,0.3);
+        border-radius: 5px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        min-height: 500px;
+    }
+
+    .sidebar, .sidebar-right {
+        background: linear-gradient(180deg, #b19cd9 0%, #9370db 100%);
+        width: 200px;
+        padding: 20px;
+        border-left: 3px solid #000;
+        border-right: 3px solid #000;
+    }
+
+    .main-content {
+        flex: 1;
+        background: #000;
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+    }
+
+    /* Styles for the book list */
+    .book-list {
+        margin-top: 20px;
+        color: #000;
+        font-size: 12px;
+    }
+
+    .book-list h3 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+
+    .book-list ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .book-list li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .book-list li:before {
+        content: "♥";
+        color: #000000;
+        position: absolute;
+        left: 0;
+    }
+
+    .chapter-heading {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .chapter-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .chapter-box {
+        background: linear-gradient(180deg, #dda0dd 0%, #ba55d3 100%);
+        color: #000;
+        border: 2px solid #000;
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: url('mouse2.png'), pointer; /* FIXED */
+        transition: all 0.3s;
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+    }
+
+    .chapter-box:hover {
+        background: linear-gradient(180deg, #ba55d3 0%, #dda0dd 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .chapter-box h3 {
+        margin: 0;
+        padding: 0;
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-banner">
+            <img src="holy1.png" alt="Website Banner">
+        </div>
+
+        <div class="nav-banner">
+            <a href="index.html">Home</a>
+            <a href="norwegian.html">Norwegian</a>
+            <a href="arthistory.html">Art History</a>
+            <a href="Climbing.html">Climbing</a>
+            <a href="writing.html">Writing</a>
+            <a href="cooking.html">Cooking</a>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="sidebar">
+                <div class="book-list">
+                    <h3>My Fave Books</h3>
+                    <ul>
+                        <li>The Seven Husbands of Evelyn Hugo by Jenkins Reid</li> 
+                        <li>Something Wicked This Way Comes by Bradbury</li>
+                        <li>The Inklings by Carpenter</li>
+                        <li>The Kite Runner by Hosseini</li>
+                        <li>Frankenstein by Shelley</li>
+                        <li>Convenience Store Woman by Murata</li>
+                        <li>The Bluest Eye by Morrison</li>
+                        <li>The Places in Between by Stewart</li>
+                        <li>The Island of Missing Trees by Shafak</li>
+                        <li>Where the Crawdads Sing by Owens</li>
+                        <li>In the Kitchen by Daunt Books</li>
+                        <li>Freewheeling by Daunt Books</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+
+                <h2 class="chapter-heading">Lorem ipsum dolor sit amet</h2>
+
+                <div class="chapter-grid">
+                    <div class="chapter-box"><h3>Chapter 1</h3></div>
+                    <div class="chapter-box"><h3>Chapter 2</h3></div>
+                    <div class="chapter-box"><h3>Chapter 3</h3></div>
+                    <div class="chapter-box"><h3>Chapter 4</h3></div>
+                    <div class="chapter-box"><h3>Chapter 5</h3></div>
+                    <div class="chapter-box"><h3>Chapter 6</h3></div>
+                    <div class="chapter-box"><h3>Chapter 7</h3></div>
+                    <div class="chapter-box"><h3>Chapter 8</h3></div>
+                    <div class="chapter-box"><h3>Chapter 9</h3></div>
+                    <div class="chapter-box"><h3>Chapter 10</h3></div>
+                </div>
+            </div>
+
+            <div class="sidebar-right">
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="ink.gif" style="max-width: 90%; margin-bottom: 40px;">
+                    <img src="type.gif" style="max-width: 70%; margin-bottom: 30px;">
+                    <img src="diary.gif" style="max-width: 90%; margin-bottom: 30px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+ 
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
